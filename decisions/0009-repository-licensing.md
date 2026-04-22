@@ -15,7 +15,7 @@ Some repositories are currently private and will only need a licence when they a
 
 Documentation repositories use Creative Commons Attribution 4.0 International (CC BY 4.0). This applies to all repositories whose content is primarily prose, specification, or decision-record material, including `governance`, `archive-contract`, and `.github`. The licence is added as a `LICENSE` file at the repository root.
 
-Code repositories do not have a default licence. The licence for a code repository is chosen at the point the repository is made public, informed by its role in the project and by the state of any commercial considerations at that time. Until a code repository is public, it remains under default copyright and does not require a `LICENSE` file.
+Code repositories do not have a default licence. The licence for a code repository is chosen at the point the repository is made public, informed by its role in the project and the context at that time. Until a code repository is public, it remains under default copyright and does not require a `LICENSE` file.
 
 When a code repository is made public, the licence decision is captured as an ADR in that repository.
 
