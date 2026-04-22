@@ -27,3 +27,9 @@ Decisions that apply to a single repository belong in that repository's own `doc
 ## How to change the architecture
 
 `architecture.md` is updated when the shape of the project changes in a way that crosses repository boundaries — a new layer, a changed boundary between layers, a new relationship between components. Material changes are made deliberately, captured as ADRs in `decisions/`, and reflected in the document. The document describes the current architecture; the ADRs record how it got here.
+
+## Licence and contribution
+
+This repository is available under [Creative Commons Attribution 4.0 International](./LICENSE). Read, quote, adapt, and reuse the material with attribution.
+
+External contribution to the project is not currently accepted. See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the current posture and the channels available for discussion.
