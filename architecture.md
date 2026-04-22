@@ -26,7 +26,7 @@ The archive contract is the versioned specification of what collectors produce a
 
 The contract is the only interface through which a consumer reads a collector's output. Consumers do not reach into collector internals. Collectors do not adjust output to accommodate consumer preferences. Changes to what either side depends on are changes to the contract.
 
-The contract lives in its own repository: `archive-contract`.
+The contract lives in its own repository: [`archive-contract`](https://github.com/longhandarchive/archive-contract).
 
 ### 3. The sync / projection layer
 
@@ -34,7 +34,7 @@ The sync layer reads from collector archives and projects the data into the plat
 
 The sync layer is one-directional. It reads from archives and writes to the database. It never writes back to archives. It never exposes database state to collectors.
 
-The sync layer applies compliance transformations — most notably, personal data redaction per `governance/decisions/0007` — at the boundary between archive and projection. The raw archive retains complete data; the projection only receives the minimised version.
+The sync layer applies compliance transformations — most notably, personal data redaction per [`decisions/0007`](decisions/0007-personal-data-redacted-at-projection-boundary.md) — at the boundary between archive and projection. The raw archive retains complete data; the projection only receives the minimised version.
 
 The sync layer is part of the platform repository.
 
@@ -42,7 +42,7 @@ The sync layer is part of the platform repository.
 
 The data layer defines the domain models, queries, and database access patterns that the rest of the platform uses to interact with stored data. It is the single place where the shape of a job, an event, an asset, or a user is defined in code.
 
-The data layer includes the database schema itself. The platform uses a single Postgres instance with two logically separate schemas: `archive` for the projection of collector data, and `accounts` for authoritative user data. Foreign keys do not cross the schema boundary. See `platform/docs/decisions/0001`.
+The data layer includes the database schema itself. The platform uses a single Postgres instance with two logically separate schemas: `archive` for the projection of collector data, and `accounts` for authoritative user data. Foreign keys do not cross the schema boundary. See [`platform/docs/decisions/0001`](https://github.com/longhandarchive/platform/blob/main/docs/decisions/0001-two-schema-database-model.md).
 
 The data layer is consumed by the sync layer (which writes to `archive`) and by the application layer (which reads from `archive` and reads from and writes to `accounts`).
 
@@ -70,17 +70,17 @@ The public API is a documented, versioned, stable JSON interface exposed to exte
 
 The public API does not exist yet. It will be introduced when external consumers earn its existence — that is, when there is evidence of demand for programmatic access and when the cost of formalising a stable interface is justified by that demand. Until then, the application layer's JSON endpoints are internal and subject to change without notice.
 
-When the public API is introduced, the three-test rule in `governance/decisions/0001` applies to the question of whether it earns its own repository or remains inside the platform.
+When the public API is introduced, the three-test rule in [`decisions/0001`](decisions/0001-new-repositories-require-three-tests.md) applies to the question of whether it earns its own repository or remains inside the platform.
 
 ## Repositories and layers
 
 The mapping between repositories and layers is intentional and should be preserved.
 
-- `civilservicejobs-collector` — the first collector. Future collectors occupy their own repositories.
-- `archive-contract` — the contract between collectors and consumers. Shared specification.
-- `platform` — the sync layer, the data layer, the application layer, and the presentation layer. One repository, internally layered.
-- `governance` — cross-cutting decisions and principles. No code; documentation only.
-- `.github` — organisation profile and shared configuration. Public.
+- [`civilservicejobs-collector`](https://github.com/longhandarchive/civilservicejobs-collector) — the first collector. Future collectors occupy their own repositories.
+- [`archive-contract`](https://github.com/longhandarchive/archive-contract) — the contract between collectors and consumers. Shared specification.
+- [`platform`](https://github.com/longhandarchive/platform) — the sync layer, the data layer, the application layer, and the presentation layer. One repository, internally layered.
+- [`governance`](https://github.com/longhandarchive/governance) — cross-cutting decisions and principles. No code; documentation only.
+- [`.github`](https://github.com/longhandarchive/.github) — organisation profile and shared configuration. Public.
 
 Code that belongs to a specific layer lives in the repository that owns that layer. Code that would cross layers — for example, a utility that both a collector and the sync layer need — is a signal that a shared library may eventually be needed, but is not extracted until at least two concrete cases demonstrate the need.
 
@@ -116,4 +116,4 @@ This document captures what must be true across repositories. Everything else is
 
 The architecture will change. New collectors will be added. The platform will grow features that stress its current shape. The public API will eventually be introduced. Future versions of the archive contract will supersede the current one.
 
-This document is versioned with the `governance` repository. Material changes to the architecture are made deliberately, captured in ADRs in `governance/decisions/`, and reflected here. The document is the current description of the architecture; the ADRs are the record of how it got here.
+This document is versioned with the `governance` repository. Material changes to the architecture are made deliberately, captured in ADRs in [`decisions/`](decisions/), and reflected here. The document is the current description of the architecture; the ADRs are the record of how it got here.

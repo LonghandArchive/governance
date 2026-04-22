@@ -6,17 +6,17 @@ Repositories in this organisation make their own architectural and implementatio
 
 ## What lives here
 
-**`architecture.md`** — the authoritative description of how The Longhand Archive is structured, including the seven architectural layers and the boundaries between them. Referenced by every repository's `CLAUDE.md` as the source of truth for cross-cutting architectural context.
+**[`architecture.md`](architecture.md)** — the authoritative description of how The Longhand Archive is structured, including the seven architectural layers and the boundaries between them. Referenced by every repository's `CLAUDE.md` as the source of truth for cross-cutting architectural context.
 
-**`principles.md`** — a short statement of how the project operates. The rules the project holds itself to, written for reading rather than reference.
+**[`principles.md`](principles.md)** — a short statement of how the project operates. The rules the project holds itself to, written for reading rather than reference.
 
-**`decisions/`** — Architecture Decision Records for cross-cutting decisions, numbered sequentially. Each ADR records a single decision: the context that made it necessary, the decision itself, and the consequences that follow.
+**[`decisions/`](decisions/)** — Architecture Decision Records for cross-cutting decisions, numbered sequentially. Each ADR records a single decision: the context that made it necessary, the decision itself, and the consequences that follow.
 
 ## How to read an ADR
 
 ADRs are dated and immutable. A decision that is later reversed is recorded in a new ADR that supersedes the original; the original is marked superseded but is not edited. The history is always legible.
 
-An ADR that applies across repositories lives here. An ADR that applies to a single repository lives in that repository's own `docs/decisions/` directory. See ADR 0008 for the rule.
+An ADR that applies across repositories lives here. An ADR that applies to a single repository lives in that repository's own `docs/decisions/` directory. See [ADR 0008](decisions/0008-adr-location-repo-and-org.md) for the rule.
 
 ## How to add an ADR
 
@@ -26,7 +26,7 @@ Decisions that apply to a single repository belong in that repository's own `doc
 
 ## How to change the architecture
 
-`architecture.md` is updated when the shape of the project changes in a way that crosses repository boundaries — a new layer, a changed boundary between layers, a new relationship between components. Material changes are made deliberately, captured as ADRs in `decisions/`, and reflected in the document. The document describes the current architecture; the ADRs record how it got here.
+[`architecture.md`](architecture.md) is updated when the shape of the project changes in a way that crosses repository boundaries — a new layer, a changed boundary between layers, a new relationship between components. Material changes are made deliberately, captured as ADRs in [`decisions/`](decisions/), and reflected in the document. The document describes the current architecture; the ADRs record how it got here.
 
 ## Licence and contribution
 
