@@ -10,7 +10,7 @@ The Longhand Archive is a personal project, built in public, that archives UK pu
 
 **Built in public.** The project is a personal learning log as much as a data artefact. Decisions, reasoning, and reversals are visible. The messiness is part of the value; the polish is not the point.
 
-**The process is the product.** The project is a practical demonstration of how one person builds a substantive system using AI-assisted tools. The architecture, the decisions, and the working method are documented as they happen. The reasoning is intended to be as reusable as the code.
+**The process is the product.** One person, building a substantive system using AI-assisted tools, documenting the architecture, the decisions, and the working method as they happen. The reasoning is as reusable as the code.
 
 **Independent and non-endorsed.** The project is not affiliated with or endorsed by any UK government department or any other organisation. It is a personal undertaking. It uses public data under the Open Government Licence. Its analytical posture is observational, not adversarial.
 
