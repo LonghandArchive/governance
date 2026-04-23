@@ -12,6 +12,8 @@ Repositories in this organisation make their own architectural and implementatio
 
 **[`decisions/`](decisions/)** — Architecture Decision Records for cross-cutting decisions, numbered sequentially. Each ADR records a single decision: the context that made it necessary, the decision itself, and the consequences that follow.
 
+**[Development site](https://longhandarchive.github.io)** — the project's public development narrative, including a consolidated view of all architectural decisions across repositories.
+
 ## How to read an ADR
 
 ADRs are dated and immutable. A decision that is later reversed is recorded in a new ADR that supersedes the original; the original is marked superseded but is not edited. The history is always legible.
